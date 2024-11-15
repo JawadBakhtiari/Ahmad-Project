@@ -25,7 +25,7 @@ const useRegister = () => {
 
     try {
       const response = await fetch(
-        "https://z5470461-presto-be-deploy.vercel.app/admin/auth/register",
+        "http://localhost:5005/admin/auth/register",
         {
           method: "POST",
           headers: {

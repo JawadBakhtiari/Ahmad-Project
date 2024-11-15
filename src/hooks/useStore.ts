@@ -6,7 +6,7 @@ const useStore = (token: string | null) => {
 
   useEffect(() => {
     if (token) {
-      fetch("https://z5470461-presto-be-deploy.vercel.app/store", {
+      fetch("http://localhost:5005/store", {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => response.json())
@@ -21,7 +21,7 @@ const useStore = (token: string | null) => {
 
   const updateStore = (newStore: Store) => {
     if (token) {
-      fetch("https://z5470461-presto-be-deploy.vercel.app/store", {
+      fetch("http://localhost:5005/store", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
