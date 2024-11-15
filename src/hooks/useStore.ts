@@ -6,12 +6,9 @@ const useStore = (token: string | null) => {
 
   useEffect(() => {
     if (token) {
-      fetch(
-        "https://cors-anywhere.herokuapp.com/https://cgi.cse.unsw.edu.au/~cs6080/presto//store",
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      )
+      fetch("https://z5470461-presto-be-deploy.vercel.app/store", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
         .then((response) => response.json())
         .then((data: { store: Store }) => {
           setStore(data.store);
@@ -24,17 +21,14 @@ const useStore = (token: string | null) => {
 
   const updateStore = (newStore: Store) => {
     if (token) {
-      fetch(
-        "https://cors-anywhere.herokuapp.com/https://cgi.cse.unsw.edu.au/~cs6080/presto//store",
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({ store: newStore }),
-        }
-      )
+      fetch("https://z5470461-presto-be-deploy.vercel.app/store", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ store: newStore }),
+      })
         .then((response) => response.json())
         .then(() => {
           setStore(newStore);
