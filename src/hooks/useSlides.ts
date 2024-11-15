@@ -66,7 +66,7 @@ const useSlides = (
   ) => {
     if (presentation && presentation.slides.length > 1) {
       const updatedSlides = presentation.slides.filter(
-        (slide, index) => index !== currentIndex
+        (_, index) => index !== currentIndex
       );
       const updatedPresentation = {
         ...presentation,
