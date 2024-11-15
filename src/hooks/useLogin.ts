@@ -15,7 +15,7 @@ const useLogin = () => {
 
     try {
       const response = await fetch(
-        "https://cgi.cse.unsw.edu.au/~cs6080/presto//admin/auth/login",
+        "https://cors-anywhere.herokuapp.com/https://cgi.cse.unsw.edu.au/~cs6080/presto//admin/auth/login",
         {
           method: "POST",
           headers: {
