@@ -21,12 +21,6 @@ const NewPresentationModal: React.FC<NewPresentationModalProps> = ({
     onClose();
   };
 
-  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -42,10 +36,7 @@ const NewPresentationModal: React.FC<NewPresentationModalProps> = ({
   };
 
   return (
-    <div
-      className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
-      onClick={handleOverlayClick}
-    >
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white p-6 rounded shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-4">Create New Presentation</h2>
         <input

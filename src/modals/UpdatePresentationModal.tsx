@@ -36,14 +36,7 @@ const UpdatePresentationModal: React.FC<UpdatePresentationModalProps> = ({
   };
 
   return (
-    <div
-      className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) {
-          onClose();
-        }
-      }}
-    >
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white p-6 rounded shadow-md w-full max-w-md relative">
         <button
           onClick={() => onDelete(presentation.id)}

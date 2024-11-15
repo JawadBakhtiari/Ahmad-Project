@@ -137,15 +137,33 @@ const SlideViewer: React.FC<SlideViewerProps> = ({
                     onDeleteVideo(video);
                   }}
                 >
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src={video.url}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      border: "10px solid gray",
+                      boxSizing: "border-box",
+                    }}
+                    onDoubleClick={(event) => {
+                      event.stopPropagation();
+                      onEditVideo(video);
+                    }}
+                    onContextMenu={(event) => {
+                      event.preventDefault();
+                      onDeleteVideo(video);
+                    }}
+                  >
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={video.url}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      style={{ pointerEvents: "auto" }} // Allow the iframe to capture click events
+                    ></iframe>
+                  </div>
                 </div>
               ))}
               <div className="absolute bottom-2 left-2 w-12 h-12 flex items-center justify-center text-sm text-gray-600 bg-white border border-gray-300 rounded-full">
