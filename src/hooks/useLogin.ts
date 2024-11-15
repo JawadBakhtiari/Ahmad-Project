@@ -14,13 +14,16 @@ const useLogin = () => {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:5005/admin/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await fetch(
+        "https://cgi.cse.unsw.edu.au/~cs6080/presto//admin/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
       const data: LoginResponse = (await response.json()) as LoginResponse;
 

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Presentation } from '../types/Presentation';
-import PresentationCard from './PresentationCard';
+import React from "react";
+import { Presentation } from "../types/Presentation";
+import PresentationCard from "./PresentationCard";
 
 interface PresentationListProps {
   presentations: Presentation[];
@@ -15,7 +15,7 @@ const PresentationList: React.FC<PresentationListProps> = ({
 }) => {
   return (
     <div className="presentations-list mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      {presentations.map(presentation => (
+      {presentations.map((presentation) => (
         <PresentationCard
           key={presentation.id}
           presentation={presentation}
