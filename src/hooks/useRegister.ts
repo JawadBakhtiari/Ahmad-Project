@@ -25,7 +25,7 @@ const useRegister = () => {
 
     try {
       const response = await fetch(
-        "https://cors-anywhere.herokuapp.com/https://cgi.cse.unsw.edu.au/~cs6080/presto/admin/auth/register",
+        "https://cgi.cse.unsw.edu.au/~cs6080/presto/admin/auth/register",
         {
           method: "POST",
           headers: {
